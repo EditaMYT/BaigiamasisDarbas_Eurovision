@@ -52,6 +52,7 @@
   <ItemGroup>
     <Compile Include="Driver.cs" />
     <Compile Include="Pages\Common.cs" />
+    <Compile Include="Pages\StorySwedensLoreenWinsEurovisionSongContest2023.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

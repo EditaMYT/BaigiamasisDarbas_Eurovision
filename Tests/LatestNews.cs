@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Framework.Pages
+namespace Tests
 {
-    internal class Common
+    internal class LatestNews
     {
-        
+        [Test]
     }
 }

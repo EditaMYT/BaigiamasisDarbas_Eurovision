@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Tests
+namespace Framework.Pages
 {
-    public class Class1
+    internal class StorySwedensLoreenWinsEurovisionSongContest2023
     {
     }
 }
