@@ -30,12 +30,9 @@ Website link - [Eurovision.tv](https://eurovision.tv). <br>
         4.1.3. Click on search icon in a search box <br>
 
 ---
-**5. Junior Eurovision** <br>
-    5.1. Information about Junior Eurovision <br>
-        5.1.1. Click on 'Junior Eurovision' button <br> 
-        5.1.2. Click on 'Discover all the news' button
-
-
+**5. Voting** <br>
+    5.1. How to vote <br>
+        5.1.1. Open 'Voting Procedures 2023' from 'About' menu <br>
 
 
 

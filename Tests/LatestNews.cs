@@ -8,6 +8,6 @@ namespace Tests
 {
     internal class LatestNews
     {
-        [Test]
+
     }
 }
