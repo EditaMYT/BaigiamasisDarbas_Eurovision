@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace Framework.Pages
 {
-    public class StorySwedensLoreenWinsEurovisionSongContest2023
+    internal class Latest
     {
-
     }
 }

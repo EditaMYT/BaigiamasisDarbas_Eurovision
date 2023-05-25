@@ -48,14 +48,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Eurovision\FavoritArtist.cs" />
+    <Compile Include="Eurovision\LatestNews.cs" />
+    <Compile Include="Eurovision\Participants.cs" />
+    <Compile Include="Eurovision\SearchFunction.cs" />
+    <Compile Include="Eurovision\Voting.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Eurovision\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\Framework\Framework.csproj">
       <Project>{e2b082fe-e9bd-4405-ab6e-fca6142a21ff}</Project>

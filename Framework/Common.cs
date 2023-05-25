@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Framework.Pages
+namespace Framework
 {
     internal class Common
     {
-        
     }
 }
