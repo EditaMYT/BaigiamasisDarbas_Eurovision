@@ -1,22 +1,31 @@
-﻿using System;
+﻿using OpenQA.Selenium;
+using System;
 
 namespace Framework.Pages
 {
     public class Search
     {
-        public static void ClickSearchIcon()
+        public static void Open()
         {
-            throw new NotImplementedException();
+            Driver.OpenPage("https://eurovision.tv/");
         }
 
-        public static void EnterMessage()
+        public static void EnterMessage(string message)
         {
-            throw new NotImplementedException();
+            string locator = "(//*[@id='search-header'])[2]";
+            Common.SendKeys(locator, message);
+        }
+
+        public static void ClickSearchIcon()
+        {
+            string locator = "(//*[@id='search-popup-trigger'])[1]";
+            Common.Click(locator);
         }
 
         public static string GetMessage()
         {
-            throw new NotImplementedException();
+            string locator = "//*[@id='edit-search']";
+            return Common.GetElementText(locator);
         }
     }
 }

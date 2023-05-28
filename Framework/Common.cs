@@ -1,9 +1,5 @@
 ﻿using OpenQA.Selenium;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Framework
 {
@@ -14,14 +10,20 @@ namespace Framework
             return Driver.GetDriver().FindElement(By.XPath(locator));
         }
 
-        internal static void ClickElement(string locator)
+        internal static void SendKeys(string locator, string keys)
+        {
+            GetElement(locator).SendKeys(keys);
+        }
+
+        internal static void Click(string locator)
         {
             GetElement(locator).Click();
         }
 
-        internal static void SendKeysToElement(string locator, string keys)
+        internal static string GetElementText(string locator)
         {
-            GetElement(locator).SendKeys(keys);
+            return GetElement(locator).Text;
         }
     }
 }
+    

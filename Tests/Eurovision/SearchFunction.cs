@@ -1,4 +1,5 @@
-﻿using Framework.Pages;
+﻿using Framework;
+using Framework.Pages;
 using NUnit.Framework;
 
 namespace Tests.Eurovision
@@ -8,15 +9,18 @@ namespace Tests.Eurovision
         [Test]
         public void SearchField()
         {
-            string expectedResut = "Lithuania 2023";
+            string expectedResult = "Lithuania 2023";
+            
+            Driver.InitializeDriver();
+            Search.Open();
 
-            Search.EnterMessage();
+            Search.EnterMessage(expectedResult);
             Search.ClickSearchIcon();
             string actualResult = Search.GetMessage();
 
-            Assert.AreEqual(expectedResut, actualResult);
+            Assert.AreEqual(expectedResult, actualResult);
 
-            driver.Quit();
+            Driver.ShutdownDriver();
         }
     }
 }

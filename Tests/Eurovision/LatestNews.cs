@@ -6,6 +6,6 @@ namespace Tests.Eurovision
 {
     internal class LatestNews
     {
-       
+        
     }
 }
