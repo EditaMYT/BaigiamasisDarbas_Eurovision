@@ -1,12 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Framework.Pages;
+using NUnit.Framework;
 
 namespace Tests.Eurovision
 {
     internal class SearchFunction
     {
+        [Test]
+        public void SearchField()
+        {
+            string expectedResut = "Lithuania 2023";
+
+            Search.EnterMessage();
+            Search.ClickSearchIcon();
+            string actualResult = Search.GetMessage();
+
+            Assert.AreEqual(expectedResut, actualResult);
+
+            driver.Quit();
+        }
     }
 }

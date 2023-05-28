@@ -1,12 +1,22 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Framework.Pages
 {
-    internal class Search
+    public class Search
     {
+        public static void ClickSearchIcon()
+        {
+            throw new NotImplementedException();
+        }
+
+        public static void EnterMessage()
+        {
+            throw new NotImplementedException();
+        }
+
+        public static string GetMessage()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
