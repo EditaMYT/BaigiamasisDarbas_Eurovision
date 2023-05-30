@@ -1,12 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Framework.Pages
+﻿namespace Framework.Pages
 {
-    internal class Latest
+    public class Latest
     {
+        public static void Open()
+        {
+            Driver.OpenPage("https://eurovision.tv/");
+        }
+
+        public static void ClickFirstRadioButton()
+        {
+            string locator = "//*[@id='slick-slide-control00']";
+            Common.Click(locator);
+        }
+
+        public static void ClickReadMore()
+        {
+            string locator = "//*[@id='slick-slide-control00']";
+            Common.Click(locator);
+        }
     }
 }
