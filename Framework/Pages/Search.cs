@@ -7,6 +7,12 @@
             Driver.OpenPage("https://eurovision.tv/");
         }
 
+        public static void AcceptCookies()
+        {
+            string locator = "//*[@id='onetrust-accept-btn-handler']";
+            Common.Click(locator);
+        }
+
         public static void EnterMessage(string message)
         {
             string locator = "(//*[@id='search-header'])[2]";

@@ -6,15 +6,24 @@ namespace Tests.Eurovision
 {
     internal class LatestNews
     {
-        [Test]
-        public void FirstNews()
+        [SetUp]
+        public void SetUp()
         {
             Driver.InitializeDriver();
             Latest.Open();
+            Latest.AcceptCookies();
+        }
 
+        [Test]
+        public void FirstNews()
+        {
             Latest.ClickFirstRadioButton();
             Latest.ClickReadMore();
+        }
 
+        [TearDown]
+        public void TearDown()
+        {
             Driver.ShutdownDriver();
         }
     }

@@ -6,16 +6,25 @@ namespace Tests.Eurovision
 {
     internal class Participants
     {
+        [SetUp]
+        public void SetUp()
+        {
+            Driver.InitializeDriver();
+            Event.Open();
+            Event.AcceptCookies();
+        }
+
         [Test]
         public void AllContestants()
         {
-            Driver.InitializeDriver();
-
-            Event.Open();
             Event.ClickTheShows();
             Event.ClickGrandFinal();
             Event.ClickRank();
+        }
 
+        [TearDown]
+        public void TearDown()
+        {
             Driver.ShutdownDriver();
         }
     }
