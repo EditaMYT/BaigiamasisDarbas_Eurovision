@@ -1,15 +1,15 @@
 ﻿using Framework;
 using Framework.Pages;
 using NUnit.Framework;
+using NUnit.Framework.Interfaces;
 
 namespace Tests.Eurovision
 {
-    internal class LatestNews
+    internal class LatestNews : BaseTest
     {
         [SetUp]
-        public void SetUp()
+        public void Open()
         {
-            Driver.InitializeDriver();
             Latest.Open();
             Latest.AcceptCookies();
         }
@@ -19,12 +19,12 @@ namespace Tests.Eurovision
         {
             Latest.ClickFirstRadioButton();
             Latest.ClickReadMore();
-        }
 
-        [TearDown]
-        public void TearDown()
-        {
-            Driver.ShutdownDriver();
+            if (TestContext.CurrentContext.Result.Outcome != ResultState.Success)
+            {
+                string screenshotFilePath = Driver.TakeScreenshot(TestContext.CurrentContext.Test.MethodName);
+                TestContext.AddTestAttachment(screenshotFilePath);
+            }
         }
     }
 }

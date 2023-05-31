@@ -1,15 +1,15 @@
 ﻿using Framework;
 using Framework.Pages;
 using NUnit.Framework;
+using NUnit.Framework.Interfaces;
 
 namespace Tests.Eurovision
 {
-    internal class SearchFunction
+    internal class SearchFunction : BaseTest
     {
         [SetUp]
-        public void SetUp()
+        public void Open()
         {
-            Driver.InitializeDriver();
             Search.Open();
             Search.AcceptCookies();
         }
@@ -24,12 +24,12 @@ namespace Tests.Eurovision
             string actualResult = Search.GetMessage();
 
             Assert.AreEqual(expectedResult, actualResult);
-        }
 
-        [TearDown]
-        public void TearDown()
-        {
-            Driver.ShutdownDriver();
+            if (TestContext.CurrentContext.Result.Outcome != ResultState.Success)
+            {
+                string screenshotFilePath = Driver.TakeScreenshot(TestContext.CurrentContext.Test.MethodName);
+                TestContext.AddTestAttachment(screenshotFilePath);
+            }
         }
     }
 }

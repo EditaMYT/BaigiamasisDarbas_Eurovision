@@ -1,15 +1,15 @@
 ﻿using Framework;
 using Framework.Pages;
 using NUnit.Framework;
+using NUnit.Framework.Interfaces;
 
 namespace Tests.Eurovision
 {
-    internal class Voting
+    internal class Voting : BaseTest
     {
         [SetUp]
-        public void SetUp()
+        public void Open()
         {
-            Driver.InitializeDriver();
             About.Open();
             About.AcceptCookies();
         }
@@ -18,12 +18,12 @@ namespace Tests.Eurovision
         public void HowToVote()
         {
             About.ClickVotingProcedures2023();
-        }
 
-        [TearDown]
-        public void TearDown()
-        {
-            Driver.ShutdownDriver();
+            if (TestContext.CurrentContext.Result.Outcome != ResultState.Success)
+            {
+                string screenshotFilePath = Driver.TakeScreenshot(TestContext.CurrentContext.Test.MethodName);
+                TestContext.AddTestAttachment(screenshotFilePath);
+            }
         }
     }
 }
