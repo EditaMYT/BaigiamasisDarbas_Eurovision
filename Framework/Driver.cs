@@ -2,7 +2,6 @@
 using OpenQA.Selenium.Chrome;
 using System;
 using System.IO;
-using System.Security.Policy;
 
 namespace Framework
 {
@@ -12,7 +11,10 @@ namespace Framework
 
         public static void InitializeDriver()
         {
-            driver = new ChromeDriver();
+            ChromeOptions options = new ChromeOptions();
+            options.AddArgument("--user-data-dir=C:\\Users\\Edita\\AppData\\Local\\Google\\Chrome\\User Data");
+            options.AddArgument("--profile-directory=Profile 1");
+            driver = new ChromeDriver(options);
         }
 
         internal static IWebDriver GetDriver()
