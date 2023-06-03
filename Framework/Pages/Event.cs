@@ -1,4 +1,8 @@
-﻿namespace Framework.Pages
+﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
+using System;
+
+namespace Framework.Pages
 {
     public class Event
     {
@@ -9,19 +13,27 @@
 
         public static void AcceptCookies()
         {
-            string locator = "//*[@id='onetrust-accept-btn-handler']";
+            string locator = "(//*[@id='onetrust-banner-sdk']//button)[3]";
+            WebDriverWait wait = new WebDriverWait(Driver.GetDriver(), TimeSpan.FromSeconds(10));
+            wait.Until(driver => driver.FindElement(By.XPath(locator)));
+            Common.Click(locator);
+        }
+
+        public static void ClickLiverpool2023()
+        {
+            string locator = "(//*[@id='header']//*[contains(@class,'button-menu')])[7]";
             Common.Click(locator);
         }
 
         public static void ClickTheShows()
         {
-            string locator = "//*[@id='header']/div/div/div[2]/nav/ul/li[3]/ul/li[1]/a";
+            string locator = "(//*[@id='header']//*[contains(@class,'button-menu')])[8]";
             Common.Click(locator);
         }
 
         public static void ClickGrandFinal()
         {
-            string locator = "//*[@id='content']/section/div/div[1]/div[2]/div/div/div[2]/a[5]";
+            string locator = "(//*[@id='content']//*[contains(@class,'js-tab-item')])[5]";
             Common.Click(locator);
         }
 
@@ -33,7 +45,7 @@
 
         public static void ClickParticipants()
         {
-            string locator = "//*[@id='content']/section/div/div[1]/div[2]/div/div/div[2]/a[2]";
+            string locator = "(//*[@id='content']//*[contains(@class,'js-tab-item')])[2]";
             Common.Click(locator);
         }
 

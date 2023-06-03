@@ -17,6 +17,7 @@ namespace Tests.Eurovision
         [Test]
         public void HowToVote()
         {
+            About.ClickAbout();
             About.ClickVotingProcedures2023();
 
             if (TestContext.CurrentContext.Result.Outcome != ResultState.Success)

@@ -17,6 +17,7 @@ namespace Tests.Eurovision
         [Test]
         public void ThirdOption()
         {
+            Event.ClickLiverpool2023();
             Event.ClickTheShows();
             Event.ClickParticipants();
             Event.ClickThirdOption();

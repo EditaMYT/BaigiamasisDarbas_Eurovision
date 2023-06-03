@@ -1,5 +1,7 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Interactions;
+using OpenQA.Selenium.Support.Extensions;
 using System;
 using System.IO;
 
@@ -11,10 +13,7 @@ namespace Framework
 
         public static void InitializeDriver()
         {
-            ChromeOptions options = new ChromeOptions();
-            options.AddArgument("--user-data-dir=C:\\Users\\Edita\\AppData\\Local\\Google\\Chrome\\User Data");
-            options.AddArgument("--profile-directory=Profile 1");
-            driver = new ChromeDriver(options);
+            driver = new ChromeDriver();
         }
 
         internal static IWebDriver GetDriver()
@@ -29,7 +28,7 @@ namespace Framework
 
         public static void ShutdownDriver()
         {
-            driver.Quit();
+            //driver.Quit();
         }
 
         public static string TakeScreenshot(string methodName)

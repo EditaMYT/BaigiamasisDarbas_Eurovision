@@ -17,6 +17,7 @@ namespace Tests.Eurovision
         [Test]
         public void AllContestants()
         {
+            Event.ClickLiverpool2023();
             Event.ClickTheShows();
             Event.ClickGrandFinal();
             Event.ClickRank();
