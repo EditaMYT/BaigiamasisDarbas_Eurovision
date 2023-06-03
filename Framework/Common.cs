@@ -1,7 +1,4 @@
 ﻿using OpenQA.Selenium;
-using OpenQA.Selenium.Support.Extensions;
-using OpenQA.Selenium.Support.UI;
-using System;
 
 namespace Framework
 {
@@ -25,36 +22,6 @@ namespace Framework
         internal static string GetElementText(string locator)
         {
             return GetElement(locator).Text;
-        }
-
-        internal static void ScrollUntilElementIsClicable(string locator)
-        {
-            IWebElement element = GetElement(locator);
-
-            bool isClickable = false;
-            int maxTries = 20;
-            int currentTry = 0;
-
-            while (!isClickable)
-            {
-                try
-                {
-                    element.Click();
-                    isClickable = true;
-                }
-                catch (Exception exception)
-                {
-                    if (exception is ElementClickInterceptedException && currentTry < maxTries)
-                    {
-                        Driver.GetDriver().ExecuteJavaScript("window.scrollBy(0, 50)");
-                        currentTry++;
-                    }
-                    else
-                    {
-                        throw exception;
-                    }
-                }
-            }
         }
     }
 }

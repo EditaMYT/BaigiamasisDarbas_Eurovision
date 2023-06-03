@@ -11,7 +11,7 @@ namespace Tests.Eurovision
         public void Open()
         {
             Latest.Open();
-            Latest.AcceptCookies();
+            Home.AcceptCookies();
         }
 
         [Test]
