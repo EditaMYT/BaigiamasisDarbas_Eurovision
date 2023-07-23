@@ -2,16 +2,10 @@
 {
     public class About
     {
-        public static void ClickAbout()
+        public static string GetHeadingText()
         {
-            string locator = "(//*[@id='header']//*[contains(@class,'button-menu')])[12]";
-            Common.Click(locator);
-        }
-
-        public static void ClickVotingProcedures2023()
-        {
-            string locator = "(//*[@id='header']//*[contains(@title,'Voting Procedures 2023')])[1]";
-            Common.Click(locator);
+            string locator = "//h1";
+            return Common.GetElementText(locator);
         }
     }
 }

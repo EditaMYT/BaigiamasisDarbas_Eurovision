@@ -1,4 +1,5 @@
-﻿using Framework.Pages;
+﻿using Framework;
+using Framework.Pages;
 using NUnit.Framework;
 
 namespace Tests.Eurovision
@@ -8,8 +9,13 @@ namespace Tests.Eurovision
         [Test]
         public void HowToVote()
         {
-            About.ClickAbout();
-            About.ClickVotingProcedures2023();
+            string expectedResult = "How To Vote";
+
+            Home.Menu.ClickAbout();
+            Home.Menu.About.ClickVotingProcedures2023();
+            string actualText = About.GetHeadingText();
+
+            Assert.AreEqual(expectedResult, actualText);
         }
     }
 }

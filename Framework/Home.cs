@@ -18,5 +18,25 @@ namespace Framework
             wait.Until(driver => driver.FindElement(By.XPath(locator)));
             Common.Click(locator);
         }
+
+        public class Menu
+        {
+            public static void ClickAbout()
+            {
+                string locator = "//*[@id='header']//nav[not(contains(@class,'mobile'))]/ul/li[4]";
+                Common.WaitForElementToBeVisible(locator);
+                Common.Click(locator);
+            }
+
+            public class About
+            {
+                public static void ClickVotingProcedures2023()
+                {
+                    string locator = "//*[@id='header']//nav[not(contains(@class,'mobile'))]//*[contains(@title,'Voting Procedures 2023')]";
+                    Common.WaitForElementToBeVisible(locator);
+                    Common.Click(locator);
+                }
+            }
+        }
     }
 }
