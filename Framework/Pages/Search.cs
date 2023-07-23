@@ -23,7 +23,7 @@
         public static string GetMessage()
         {
             string locator = "//*[@id='edit-search']";
-            return Common.GetElementText(locator);
+            return Common.GetElementAttributeValue(locator, "value");
         }
     }
 }
