@@ -1,5 +1,6 @@
 ﻿using Framework;
 using NUnit.Framework;
+using NUnit.Framework.Interfaces;
 
 namespace Tests
 {
@@ -10,12 +11,18 @@ namespace Tests
         {
             Driver.InitializeDriver();
             Home.Open();
-            Home.AcceptCookies();
+            //Home.AcceptCookies();
         }
 
         [TearDown]
         public void TearDown()
         {
+            if (TestContext.CurrentContext.Result.Outcome != ResultState.Success)
+            {
+                string screenshotFilePath = Driver.TakeScreenshot(TestContext.CurrentContext.Test.MethodName);
+                TestContext.AddTestAttachment(screenshotFilePath);
+            }
+
             Driver.ShutdownDriver();
         }
     }

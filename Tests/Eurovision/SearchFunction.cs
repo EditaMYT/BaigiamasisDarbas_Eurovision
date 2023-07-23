@@ -1,7 +1,5 @@
-﻿using Framework;
-using Framework.Pages;
+﻿using Framework.Pages;
 using NUnit.Framework;
-using NUnit.Framework.Interfaces;
 
 namespace Tests.Eurovision
 {
@@ -19,12 +17,6 @@ namespace Tests.Eurovision
             string actualResult = Search.GetMessage();
 
             Assert.AreEqual(expectedResult, actualResult);
-
-            if (TestContext.CurrentContext.Result.Outcome != ResultState.Success)
-            {
-                string screenshotFilePath = Driver.TakeScreenshot(TestContext.CurrentContext.Test.MethodName);
-                TestContext.AddTestAttachment(screenshotFilePath);
-            }
         }
     }
 }
