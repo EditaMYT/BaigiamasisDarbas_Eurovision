@@ -2,11 +2,6 @@
 {
     public class About
     {
-        public static void Open()
-        {
-            Driver.OpenPage("https://eurovision.tv/");
-        }
-
         public static void ClickAbout()
         {
             string locator = "(//*[@id='header']//*[contains(@class,'button-menu')])[12]";

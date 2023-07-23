@@ -10,7 +10,7 @@ namespace Tests.Eurovision
         [SetUp]
         public void Open()
         {
-            About.Open();
+            Home.Open();
             Home.AcceptCookies();
         }
 

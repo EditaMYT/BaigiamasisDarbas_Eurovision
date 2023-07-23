@@ -6,6 +6,11 @@ namespace Framework
 {
     public class Home
     {
+        public static void Open()
+        {
+            Driver.OpenPage("https://eurovision.tv/");
+        }
+
         public static void AcceptCookies() 
         {
             string locator = "(//*[@id='onetrust-banner-sdk']//button)[3]";

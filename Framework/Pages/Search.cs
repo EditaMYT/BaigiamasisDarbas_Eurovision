@@ -2,11 +2,6 @@
 {
     public class Search
     {
-        public static void Open()
-        {
-            Driver.OpenPage("https://eurovision.tv/");
-        }
-
         public static void ClickSearchIcon()
         {
             string locator = "(//*[@id='search-popup-trigger'])[1]";
