@@ -9,6 +9,8 @@ namespace Tests
         public void SetUp()
         {
             Driver.InitializeDriver();
+            Home.Open();
+            Home.AcceptCookies();
         }
 
         [TearDown]

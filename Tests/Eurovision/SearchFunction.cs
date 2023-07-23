@@ -7,13 +7,6 @@ namespace Tests.Eurovision
 {
     internal class SearchFunction : BaseTest
     {
-        [SetUp]
-        public void Open()
-        {
-            Home.Open();
-            Home.AcceptCookies();
-        }
-
         [Test]
         public void SearchField()
         {

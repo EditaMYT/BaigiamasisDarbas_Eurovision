@@ -7,13 +7,6 @@ namespace Tests.Eurovision
 {
     internal class FavoritArtist : BaseTest
     {
-        [SetUp]
-        public void Open()
-        {
-            Home.Open();
-            Home.AcceptCookies();
-        }
-
         [Test]
         public void ThirdOption()
         {
