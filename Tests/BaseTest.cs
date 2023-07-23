@@ -1,4 +1,5 @@
 ﻿using Framework;
+using Framework.Pages;
 using NUnit.Framework;
 using NUnit.Framework.Interfaces;
 
