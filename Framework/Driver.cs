@@ -12,6 +12,7 @@ namespace Framework
         public static void InitializeDriver()
         {
             driver = new ChromeDriver();
+            driver.Manage().Window.Maximize();
         }
 
         internal static IWebDriver GetDriver()

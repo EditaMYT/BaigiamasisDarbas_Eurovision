@@ -1,30 +1,20 @@
-﻿using Framework;
-using Framework.Pages;
+﻿using Framework.Pages;
 using NUnit.Framework;
-using NUnit.Framework.Interfaces;
 
 namespace Tests.Eurovision
 {
     internal class Voting : BaseTest
     {
-        [SetUp]
-        public void Open()
-        {
-            About.Open();
-            Home.AcceptCookies();
-        }
-
         [Test]
         public void HowToVote()
         {
-            About.ClickAbout();
-            About.ClickVotingProcedures2023();
+            string expectedResult = "How To Vote";
 
-            if (TestContext.CurrentContext.Result.Outcome != ResultState.Success)
-            {
-                string screenshotFilePath = Driver.TakeScreenshot(TestContext.CurrentContext.Test.MethodName);
-                TestContext.AddTestAttachment(screenshotFilePath);
-            }
+            Home.Menu.ClickAbout();
+            Home.Menu.About.ClickVotingProcedures2023();
+            string actualText = About.GetHeadingText();
+
+            Assert.AreEqual(expectedResult, actualText);
         }
     }
 }

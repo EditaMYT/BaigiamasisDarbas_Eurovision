@@ -2,21 +2,10 @@
 {
     public class About
     {
-        public static void Open()
+        public static string GetHeadingText()
         {
-            Driver.OpenPage("https://eurovision.tv/");
-        }
-
-        public static void ClickAbout()
-        {
-            string locator = "(//*[@id='header']//*[contains(@class,'button-menu')])[12]";
-            Common.Click(locator);
-        }
-
-        public static void ClickVotingProcedures2023()
-        {
-            string locator = "(//*[@id='header']//*[contains(@title,'Voting Procedures 2023')])[1]";
-            Common.Click(locator);
+            string locator = "//h1";
+            return Common.GetElementText(locator);
         }
     }
 }

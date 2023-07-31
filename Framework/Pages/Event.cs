@@ -2,15 +2,9 @@
 {
     public class Event
     {
-        public static void Open()
+        public static void OpenEventPage(string city, string year)
         {
-            Driver.OpenPage("https://eurovision.tv/");
-        }
-
-        public static void ClickLiverpool2023()
-        {
-            string locator = "(//*[@id='header']//*[contains(@class,'button-menu')])[7]";
-            Common.Click(locator);
+            Driver.OpenPage($"https://eurovision.tv/event/{city}-{year}");
         }
 
         public static void ClickTheShows()

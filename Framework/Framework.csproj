@@ -55,7 +55,7 @@
   <ItemGroup>
     <Compile Include="Common.cs" />
     <Compile Include="Driver.cs" />
-    <Compile Include="Home.cs" />
+    <Compile Include="Pages\Home.cs" />
     <Compile Include="Pages\About.cs" />
     <Compile Include="Pages\Event.cs" />
     <Compile Include="Pages\Latest.cs" />

@@ -2,11 +2,6 @@
 {
     public class Latest
     {
-        public static void Open()
-        {
-            Driver.OpenPage("https://eurovision.tv/");
-        }
-
         public static void ClickFirstRadioButton()
         {
             string locator = "(//*[@id='block-homepage-banner']//button)[3]";

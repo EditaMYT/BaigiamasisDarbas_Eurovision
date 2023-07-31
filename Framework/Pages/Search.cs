@@ -2,11 +2,6 @@
 {
     public class Search
     {
-        public static void Open()
-        {
-            Driver.OpenPage("https://eurovision.tv/");
-        }
-
         public static void ClickSearchIcon()
         {
             string locator = "(//*[@id='search-popup-trigger'])[1]";
@@ -28,7 +23,7 @@
         public static string GetMessage()
         {
             string locator = "//*[@id='edit-search']";
-            return Common.GetElementText(locator);
+            return Common.GetElementAttributeValue(locator, "value");
         }
     }
 }
